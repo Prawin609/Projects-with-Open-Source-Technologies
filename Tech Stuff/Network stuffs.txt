@@ -1,0 +1,60 @@
+127.0.0.1 is a special IP address which represents your own machine.
+
+CIDR - Classless Inter Domain Routing. It is the total number of network bits
+
+The default CIDR value for Class A IP addesss is 8, default subnet mast 255.0.0.0
+The default CIDR value of Class B IP address is 16, default subnet mask 255.255.0.0
+The default CIDR value of Class C IP address is 24, default subnet mask 255.255.255.0
+
+Note: Network ID is determined by a bitwise AND operation between IP address and Subnet mask
+
+ARP (Address Resolution Protocol):
+The process of knowing the MAC address with the help of IP address is called ARP.
+
+Some uses of MAC:
+1. uniquely identify a machine when IP address is not available. For example, a DHCP server uses MAC address to assign the IP address.
+2. A IP address can change, for example, when you take your laptop from one DC to another. But, MAC is permanent. That is why it is called physical address of the system.
+(Note: Switch does not understand IP address, switch understands only MAC address and port.
+
+The switch has a MAC table. The MAC table has a list of port numbers and mac addresses. Depending on MAC address passed, it will send information to that specific machine alone.
+
+Default Gateway:
+we can find the configured default gateway using the command "ipconfig".
+
+Routers:
+It have multiple IP address and MAC address, one for each network they are connected to.
+By using the ARP, your machine gets the MAC address of the gateway router.
+
+QUIZ:
+APR is used when the source device does not know the MAC of next device.
+
+Firewalls:
+It can be either hardware/software based.
+
+WAP (Wireless Access Point):
+wireless access point allows wireless devices to connect to a wired network using Wi-Fi. Modern routers have Access Point in built in them.
+
+Web Technologies:
+www (world wide web) and internet are not the same. Internet is not only used by www, but also used by mail, communication systems like skype etc. Web is a system for accessing resources across a network using a URL.
+Web uses the client server model for communication. 
+
+TCP/IP Layers:
+Application Layer:
+The S/W in application layer is responsible for converting the data in a form understandable by the destination application. 
+Transport Layer:
+This layer ensures that the data has reached the destination. It does this by looking for an acknowledgement from the receiver. It sends a unique sequence no. for each data and expects it back in the acknowledgement. If it does not receive an acknowledgement within a  certain time, it resend the data.
+Typically the Transport and Internet Layers are implemented in the operating system.
+Internet Layer:
+This layer is responsible for finding the best possible route for the data to reach the destination. The routers actively use this layer to find the best route.
+Link Layer:
+This layer can be implemented in software or hardware. It is responsible for
+a) ensuring the data delivery to the correct host
+b) delivering only error-free data to the destination (using CRC checks).
+The sender uses CRC algorithm to generate a unique number (CRC) for the data. The CRC and data are transmitted to the destination. The receiver uses the same CRC algorithm and checks if the generated CRC matches the transmitted CRC. If both match, then the data has arrived uncorrupted. If not, the received data is discarded.
+
+Day9 : switching:
+day10 : Port Models and Functions:
+day11 : VLAN Foundation:
+for instance, if we take 42 port switch. If one of the port receives a broadcast traffic, it broadcasts the traffic to remaining ports. so to avoid this VLANs are introduced. 
+The logic behind is, for instance, we can divide the 42 ports into 4 sets of 12 ports. if we send broadcast traffic to any one sets of those ports, it is specific to those sets of ports, it wont broadcast to the remaining sets of ports.
+(Note; Trunk is one of the configuration in the interface level of switch, if we make an interface switch to trunk, it will treat the device that is connected to the interface is like a switch. This is how VLAN is achieved.)

@@ -1,0 +1,12 @@
+public class TestTypeInference {
+
+public static void main(String[] args) {
+PrawinTest<Integer, Integer, Integer> testPrawin = (n1, n2) -> {return n1+n2;}; 
+
+System.out.println("Addition Using Type Inference : " + testPrawin.Addition(2, 3));
+}
+
+interface PrawinTest<N1, N2, R>{
+R Addition(N1 n1, N2 n2);
+}
+} 

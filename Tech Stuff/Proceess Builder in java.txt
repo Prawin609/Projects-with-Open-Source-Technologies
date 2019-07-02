@@ -1,0 +1,9 @@
+ProcessBuilder pb = new ProcessBuilder("python3", "name of the process to start", macAddress);
+Process p = pb.start();
+p.waitFor();
+if (0 == p.exitValue()) {
+return true;
+}
+name of the process to start - putty.exe or python file
+p.waitFor() - this will wait for the application to start
+p.exitValue() - It will return 0 when the application is closed/run completed

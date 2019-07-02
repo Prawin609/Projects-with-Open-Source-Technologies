@@ -1,0 +1,5 @@
+git clone "master branch link"
+project folder will be created
+go to that folder
+git checkout -b <newly created branch name>
+git pull origin <newly created branch name> --> To check the code is up-to-date
